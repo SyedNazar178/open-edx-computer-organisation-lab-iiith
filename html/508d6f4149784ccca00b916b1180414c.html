@@ -1,0 +1,47 @@
+<p align="justify" style="box-sizing: border-box; margin: 0px 0px 10px; font-size: 16px; color: #333333; font-family: Raleway;">To implement procedure abstraction we need to address the following questions:</p>
+<ol style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: #333333; font-family: Raleway; font-size: 14px;">
+<li style="box-sizing: border-box;">How to pass parameters?</li>
+<li style="box-sizing: border-box;">How to return values?</li>
+<li style="box-sizing: border-box;">How to call the procedure and return back to the calling procedure?</li>
+</ol>
+<p align="justify" style="box-sizing: border-box; margin: 0px 0px 10px; font-size: 16px; color: #333333; font-family: Raleway;">We can use the registers to pass parameters and return values back and forth between the caller and callee procedures. MIPS provides JAL, JALR (Jump and Link) and JR (Jump Return) instructions to call a procedure and return from it. Unlike x86 architecture the return address is not stored on the stack, it is stored in the Return Address Register, R31. The following is an example illustrating how procedures can be translated into MIPS code.</p>
+<div align="justify" style="box-sizing: border-box; color: #333333; font-family: Raleway; font-size: 14px;">
+<pre class="code" style="box-sizing: border-box; overflow: auto; font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; font-size: 13px; padding: 9.5px; margin-top: 0px; margin-bottom: 10px; line-height: 1.42857; color: #333333; word-break: break-all; background-color: #f5f5f5; border: 1px solid #cccccc; border-radius: 4px;"><span class="cmt" style="box-sizing: border-box;">// C-code</span>
+fun()
+{
+&nbsp;&nbsp;int dp;
+&nbsp;&nbsp;for(i = 0; i &lt; 10; ++i){
+&nbsp;&nbsp;&nbsp;&nbsp;A[i] = i; B[i] = 10 - i;
+&nbsp;&nbsp;} 
+&nbsp;&nbsp;dp = dotproduct(A, B, 10);
+}
+int dotproduct(int *A, int *B, int dim)
+{
+&nbsp;&nbsp;for(i = 0; i &lt; dim; ++i){
+&nbsp;&nbsp;&nbsp;&nbsp;dpsum += A[i] * B[i];
+&nbsp;&nbsp;} 
+&nbsp;&nbsp;return dpsum;
+}<br style="box-sizing: border-box;" /><span class="cmt" style="box-sizing: border-box;"><br style="box-sizing: border-box;" />// Data Section</span>
+<span class="keyw" style="box-sizing: border-box;">.data</span>
+A .space 40&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cmt" style="box-sizing: border-box;">// Allocate 40 bytes to A</span>
+B .space 40&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cmt" style="box-sizing: border-box;">// Allocate 40 bytes to B</span>
+<span class="cmt" style="box-sizing: border-box;">// Code Section - Variable dp resides in the register $r1</span>
+<span class="keyw" style="box-sizing: border-box;">.text</span>
+fun:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;la $r2, A    <span class="cmt" style="box-sizing: border-box;">// r2 = &amp;A</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;la $r3, B    <span class="cmt" style="box-sizing: border-box;">// r3 = &amp;B</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.         <span class="cmt" style="box-sizing: border-box;">// fill this part with the initialization code</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;li r4, #10
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jal dotproduct
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;move $r1, $r5
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;halt
+dotproduct:      <span class="cmt" style="box-sizing: border-box;">// dotproduct assumes A, B and dim are in registers $r2, $r3 and $r4 respectively</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.        <span class="cmt" style="box-sizing: border-box;">// Return value is placed in register $r5</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jr $r31
+    	</pre>
+</div>
