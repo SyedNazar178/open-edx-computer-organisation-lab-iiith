@@ -1,0 +1,43 @@
+<problem display_name="Multiple Choice" markdown="&gt;&gt;Q1. In MIPS we can increment the contents of a memory location in a single instruction.&lt;&lt;&#10;()True&#10;()False&#10;&#10;&gt;&gt;Q2. The maximum size of an immediate constant in add instruction is 0xFFFFFF.&lt;&lt;&#10;()True&#10;()False&#10;&#10;&gt;&gt;Q3. Register $r0 always contains a zero value.&lt;&lt;&#10;()True&#10;()False&#10;&#10;&gt;&gt;Q4. ADDIU can generate a overflow trap.&lt;&lt;&#10;()True&#10;()False&#10;&#10;&gt;&gt;Q5. We can use LB instruction to load a signed byte into a register and cast the signed byte to a signed word.&lt;&lt;&#10;()True&#10;()False&#10;">
+<p>Q1. In MIPS we can increment the contents of a memory location in a single instruction.</p>
+<multiplechoiceresponse>
+  <choicegroup label="Q1. In MIPS we can increment the contents of a memory location in a single instruction." type="MultipleChoice">
+    <choice correct="false">True</choice>
+    <choice correct="false">False</choice>
+  </choicegroup>
+</multiplechoiceresponse>
+
+<p>Q2. The maximum size of an immediate constant in add instruction is 0xFFFFFF.</p>
+<multiplechoiceresponse>
+  <choicegroup label="Q2. The maximum size of an immediate constant in add instruction is 0xFFFFFF." type="MultipleChoice">
+    <choice correct="false">True</choice>
+    <choice correct="false">False</choice>
+  </choicegroup>
+</multiplechoiceresponse>
+
+<p>Q3. Register $r0 always contains a zero value.</p>
+<multiplechoiceresponse>
+  <choicegroup label="Q3. Register $r0 always contains a zero value." type="MultipleChoice">
+    <choice correct="false">True</choice>
+    <choice correct="false">False</choice>
+  </choicegroup>
+</multiplechoiceresponse>
+
+<p>Q4. ADDIU can generate a overflow trap.</p>
+<multiplechoiceresponse>
+  <choicegroup label="Q4. ADDIU can generate a overflow trap." type="MultipleChoice">
+    <choice correct="false">True</choice>
+    <choice correct="false">False</choice>
+  </choicegroup>
+</multiplechoiceresponse>
+
+<p>Q5. We can use LB instruction to load a signed byte into a register and cast the signed byte to a signed word.</p>
+<multiplechoiceresponse>
+  <choicegroup label="Q5. We can use LB instruction to load a signed byte into a register and cast the signed byte to a signed word." type="MultipleChoice">
+    <choice correct="false">True</choice>
+    <choice correct="false">False</choice>
+  </choicegroup>
+</multiplechoiceresponse>
+
+
+</problem>
