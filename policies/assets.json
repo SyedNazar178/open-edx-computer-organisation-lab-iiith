@@ -3,7 +3,7 @@
         "contentType": "image/jpeg", 
         "content_son": {
             "category": "asset", 
-            "course": "cse33", 
+            "course": "cse11", 
             "name": "IIITH-Computer_Organization.jpg", 
             "org": "Virtual-Labs", 
             "revision": null, 
@@ -11,13 +11,13 @@
             "tag": "c4x"
         }, 
         "displayname": "IIITH-Computer Organization.jpg", 
-        "filename": "asset-v1:Virtual-Labs+cse33+Anytime+type@asset+block@IIITH-Computer_Organization.jpg", 
+        "filename": "asset-v1:Virtual-Labs+cse11+Anytime+type@asset+block@IIITH-Computer_Organization.jpg", 
         "import_path": "IIITH-Computer Organization.jpg", 
         "locked": false, 
         "thumbnail_location": [
             "c4x", 
             "Virtual-Labs", 
-            "cse33", 
+            "cse11", 
             "thumbnail", 
             "IIITH-Computer_Organization.jpg", 
             null
